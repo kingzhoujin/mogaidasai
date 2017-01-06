@@ -1,5 +1,5 @@
 class Admin::JobsController < ApplicationController
-  before_filter :autheticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_filter :require_is_admin
 
   def require_is_admin
@@ -32,7 +32,7 @@ class Admin::JobsController < ApplicationController
 
  private
  def job_params
-   params.require(:job).permit(:title :description)
+   params.require(:job).permit(:title, :description)
  end
 
   def edit
