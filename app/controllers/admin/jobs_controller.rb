@@ -30,10 +30,7 @@ class Admin::JobsController < ApplicationController
     end
  end
 
- private
- def job_params
-   params.require(:job).permit(:title, :description)
- end
+
 
   def edit
     @job = Job.find(params[:id])
@@ -55,7 +52,10 @@ end
   end
 
 
-
+  private
+  def job_params
+    params.require(:job).permit(:title, :description)
+  end
 
 
 
