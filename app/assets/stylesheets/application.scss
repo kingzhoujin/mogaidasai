@@ -11,8 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_bootstrap
+ *= require_bootstrap/alert
  *= require_tree .
  *= require_self
  */
-@import = "bootstrap-sprockets";
-@import = "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
