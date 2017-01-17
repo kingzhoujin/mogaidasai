@@ -8,10 +8,10 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
-          <%= link_to("按照资金下限排序", jobs_path(:order => "by_lower_bound")) %>
+          <%= link_to("按照薪金下限排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
         <li>
-            <%= link_to("按照资金上限排序", jobs_path(:order => "by_upper_bound")) %>
+            <%= link_to("按照薪金上限排序", jobs_path(:order => "by_upper_bound")) %>
 
         </li>
         <li>
@@ -20,12 +20,15 @@
         </li>
     </ul>
 </div>
+
+
+
 <table class="table table-boldered">
   <thead>
     <tr>
-      <td>旅游项目</td>
-      <td>资金下限</td>
-      <td>资金上限</td>
+      <td>工作机会</td>
+      <td>薪金下限</td>
+      <td>薪金上限</td>
       <td>刊登时间</td>
     </tr>
   </thead>

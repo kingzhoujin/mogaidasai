@@ -5,17 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "這個種子檔會自動建立一個admin帳號, 並且創建 10 個 public jobs, 以及10個hidden jobs"
+puts "這個種子檔會自動建立一個admin帳號, 並且創建 4 個 public jobs, 以及4個hidden jobs"
 
-create_account = User.create([email: 'example@gmail.com', password: '12345678', password_confirmation: '12345678', is_admin: 'true'])
+create_account = User.create([email: 'zjj@gmail.com', password: '12345678', password_confirmation: '12345678', is_admin: 'true'])
 puts "Admin account created."
 
-create_jos = for i in 1..10 do
-  Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100, is_hidden: "false"])
-end
-puts "10 Public jobs created."
+Job.create(title: "土木工程师", description:"为空岛建设宾馆等项目", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "false")
 
-create_jos = for i in 1..10 do
-  Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "true"])
-end
-puts "10 Hidden jobs created."
+Job.create(title: "全栈工程师", description:"为空岛建设虚拟化工作平台", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "false")
+
+Job.create(title: "风景设计师", description:"为空岛设计、维护美丽风景", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "false")
+
+Job.create(title: "导游", description:"向全世界的人介绍空岛美景，为空岛带来合适的游客", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "false")
+
+Job.create(title: "厨师", description:"为空岛的游客准备美食", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "true")
+
+Job.create(title: "向导", description:"带领游客探索空岛", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "true")
+
+Job.create(title: "睡眠设计师", description:"给游客设计个性化的睡眠体验", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "true")
+
+Job.create(title: "健身教练", description:"为游客订制空岛训练计划", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,is_hidden: "true")
